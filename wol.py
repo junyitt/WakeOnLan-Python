@@ -49,21 +49,3 @@ def wake_on_lan(mac_address):
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
     sock.sendto(send_data, host)
-
-
-if __name__ == '__main__':
-    if len(sys.argv) == 1:
-        help()
-        sys.exit(0)
-
-    args = sys.argv[1:]
-    for index, arg in enumerate(args):
-        if not arg.startswith('-'):
-            continue
-        if arg[1:] == '?' or arg[1:] == 'h':
-            help()
-        if arg[1:] == 'v':
-            print(VERSION)
-        if arg[1:] == 'm':
-            mac_address = args[index + 1]
-            wake_on_lan(mac_address)

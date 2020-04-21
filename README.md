@@ -1,4 +1,12 @@
 WakeOnLan-Python
+
+===
+
+Modified version:
+1. Add MAC address to _mac_list.json_
+2. Run _run_wol.py_ to send WOL packets to all MAC address in _mac_list.json_  
+```python run_wol.py``` 
+
 ===
 
 wol.py
